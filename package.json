@@ -1,10 +1,11 @@
 {
   "name": "com.bogenbai.dependencybox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Dependency Box",
   "description": "Simple Dependency Injection Framework",
   "unity": "2019.1",
   "unityRelease": "0b5",
+  "documentationUrl": "https://github.com/Bogenbai/DependencyBox-UPM",
   "dependencies": {
   },
   "keywords": [
