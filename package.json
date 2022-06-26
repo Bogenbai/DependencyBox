@@ -1,0 +1,21 @@
+{
+  "name": "com.Bogenbai.DependencyBox",
+  "version": "1.0.0",
+  "displayName": "Dependency Box",
+  "description": "Simple Dependency Injection Framework",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "dependencies": {
+  },
+  "keywords": [
+    "dependency",
+    "injection",
+    "box",
+    "di"
+  ],
+  "author": {
+    "name": "Bogdan Kurilo (Bogenbai)",
+    "email": "bkurilo363@gmail.com",
+    "url": "https://github.com/Bogenbai/DependencyBox-UPM"
+  }
+}
