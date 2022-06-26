@@ -1,10 +1,10 @@
 {
-    "name": "EditMode",
+    "name": "DependencyBox.EditMode",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "TestingTools",
+        "DependencyBox.TestingTools",
         "DependencyBox"
     ],
     "includePlatforms": [
