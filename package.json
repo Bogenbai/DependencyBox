@@ -1,5 +1,5 @@
 {
-  "name": "com.Bogenbai.DependencyBox",
+  "name": "com.Bogenbai.dependencybox",
   "version": "1.0.0",
   "displayName": "Dependency Box",
   "description": "Simple Dependency Injection Framework",
