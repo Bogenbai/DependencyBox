@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace CodeBase.Runtime.DependencyBox.Framework
+namespace CodeBase.Framework
 {
   public class Instantiator : IInstantiator
   {

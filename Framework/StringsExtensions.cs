@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace CodeBase.Runtime.DependencyBox.Framework
+namespace CodeBase.Framework
 {
   public static class StringsExtensions
   {

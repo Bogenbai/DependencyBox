@@ -1,5 +1,5 @@
 using System;
-using CodeBase.Runtime.DependencyBox.Framework;
+using CodeBase.Framework;
 using FluentAssertions;
 using NUnit.Framework;
 using Tests.TestingTools.Stubs;

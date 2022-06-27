@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CodeBase.Runtime.DependencyBox.Framework
+namespace CodeBase.Framework
 {
   public class Binder : IBinder
   {

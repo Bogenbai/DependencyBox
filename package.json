@@ -1,6 +1,6 @@
 {
   "name": "com.bogenbai.dependencybox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Dependency Box",
   "description": "Simple Dependency Injection Framework",
   "unity": "2019.1",

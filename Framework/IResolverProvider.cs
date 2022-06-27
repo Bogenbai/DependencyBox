@@ -1,4 +1,4 @@
-namespace CodeBase.Runtime.DependencyBox.Framework
+namespace CodeBase.Framework
 {
   public interface IResolverProvider
   {

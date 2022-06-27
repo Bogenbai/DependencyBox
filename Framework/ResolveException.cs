@@ -1,6 +1,6 @@
 using System;
 
-namespace CodeBase.Runtime.DependencyBox.Framework
+namespace CodeBase.Framework
 {
   public class ResolveException : Exception
   {
