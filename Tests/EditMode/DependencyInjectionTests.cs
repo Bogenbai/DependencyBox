@@ -1,8 +1,8 @@
 using System;
 using CodeBase.Framework;
+using CodeBase.Tests.TestingTools.Stubs;
 using FluentAssertions;
 using NUnit.Framework;
-using Tests.TestingTools.Stubs;
 using UnityEngine;
 
 namespace CodeBase.Tests.EditMode
@@ -271,6 +271,25 @@ namespace CodeBase.Tests.EditMode
       // assert
       var instance = dependencyBox.Resolve<StubMonoBehaviourWithDependencies>();
       instance.GetStub().Should().Be(stub);
+    }
+
+    [Test]
+    public void WhenInjectToSceneGameObjects_ThenAllDependenciesInjected()
+    {
+      // arrange
+      var stub = new PlainStub();
+
+      var dependencyBox = new DependencyBox();
+      dependencyBox.Bind<IStub>().FromInstance(stub);
+
+      var gameObject = new GameObject();
+      var monoBehaviourStub = gameObject.AddComponent<StubMonoBehaviourWithDependencies>();
+
+      // act
+      dependencyBox.InjectToSceneGameObjects();
+
+      // assert
+      monoBehaviourStub.GetStub().Should().Be(stub);
     }
   }
 }

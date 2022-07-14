@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
 namespace CodeBase.Framework
@@ -46,6 +47,17 @@ namespace CodeBase.Framework
         argsToInject[i] = _resolver.Resolve(args[i].ParameterType);
 
       return Activator.CreateInstance(concreteType, argsToInject);
+    }
+
+    public void InjectToSceneGameObjects()
+    {
+      var sceneGameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+
+      foreach (GameObject sceneGameObject in sceneGameObjects)
+      {
+        var components = sceneGameObject.GetComponentsInChildren<MonoBehaviour>();
+        InjectInto(components);
+      }
     }
 
     private void InjectInto(IEnumerable<MonoBehaviour> components)

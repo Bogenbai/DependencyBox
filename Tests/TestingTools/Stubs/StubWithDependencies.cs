@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace Tests.TestingTools.Stubs
+namespace CodeBase.Tests.TestingTools.Stubs
 {
   [UsedImplicitly]
   public class StubWithDependencies : IStub

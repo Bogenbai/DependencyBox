@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CodeBase.Framework
 {
   [PublicAPI]
-  public interface IInstantiator
+  public interface IInstantiator : IInjector
   {
     TConcrete Instantiate<TConcrete>();
     GameObject InstantiatePrefab(GameObject original);

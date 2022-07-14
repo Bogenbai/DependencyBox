@@ -41,6 +41,7 @@ namespace CodeBase.Framework
     public TConcrete Instantiate<TConcrete>() => _instantiator.Instantiate<TConcrete>();
     public GameObject InstantiatePrefab(GameObject original) => _instantiator.InstantiatePrefab(original);
     public object Instantiate(Type bindingConcreteType) => _instantiator.Instantiate(bindingConcreteType);
+    public void InjectToSceneGameObjects() => _instantiator.InjectToSceneGameObjects();
 
     public void Dispose()
     {

@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Tests.TestingTools.Stubs
+namespace CodeBase.Tests.TestingTools.Stubs
 {
   public class StubMonoBehaviourWithDependencies : MonoBehaviour
   {
