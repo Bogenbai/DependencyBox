@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
+using CodeBase.Framework.Attributes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
@@ -10,7 +12,6 @@ namespace CodeBase.Framework
   public class Instantiator : IInstantiator
   {
     private readonly IResolver _resolver;
-    private const string InjectMethodName = "SetDependencies";
 
     public Instantiator(IResolver resolver)
     {
@@ -64,18 +65,22 @@ namespace CodeBase.Framework
     {
       foreach (MonoBehaviour component in components)
       {
-        MethodInfo injectMethod = component.GetType().GetMethod(
-          InjectMethodName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+        var injectMethods = component
+          .GetType()
+          .GetMethods()
+          .Where(HasInjectMethods)
+          .ToList();
 
-        if (injectMethod == null) continue;
+        foreach (MethodInfo injectMethod in injectMethods)
+        {
+          var args = injectMethod.GetParameters();
+          var argsToInject = new object[args.Length];
 
-        var args = injectMethod.GetParameters();
-        var argsToInject = new object[args.Length];
+          for (var i = 0; i < args.Length; i++)
+            argsToInject[i] = _resolver.Resolve(args[i].ParameterType);
 
-        for (var i = 0; i < args.Length; i++)
-          argsToInject[i] = _resolver.Resolve(args[i].ParameterType);
-
-        injectMethod.Invoke(component, argsToInject);
+          injectMethod.Invoke(component, argsToInject);
+        }
       }
     }
 
@@ -87,5 +92,8 @@ namespace CodeBase.Framework
       InjectInto(new List<MonoBehaviour> {component as MonoBehaviour});
       return component;
     }
+
+    private static bool HasInjectMethods(MethodInfo methodInfo) =>
+      methodInfo.GetCustomAttributes(typeof(InjectAttribute), false).Length > 0;
   }
 }

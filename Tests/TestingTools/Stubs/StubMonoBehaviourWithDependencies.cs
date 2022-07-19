@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+using CodeBase.Framework.Attributes;
 using UnityEngine;
 
 namespace CodeBase.Tests.TestingTools.Stubs
@@ -7,7 +7,7 @@ namespace CodeBase.Tests.TestingTools.Stubs
   {
     private IStub _stub;
 
-    [UsedImplicitly]
+    [Inject]
     public void SetDependencies(IStub stub)
     {
       _stub = stub;
