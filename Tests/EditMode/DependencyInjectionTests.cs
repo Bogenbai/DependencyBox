@@ -283,6 +283,7 @@ namespace CodeBase.Tests.EditMode
       dependencyBox.Bind<IStub>().FromInstance(stub);
 
       var gameObject = new GameObject();
+      
       var monoBehaviourStub = gameObject.AddComponent<StubMonoBehaviourWithDependencies>();
 
       // act

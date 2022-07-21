@@ -67,7 +67,7 @@ namespace CodeBase.Framework
       {
         var injectMethods = component
           .GetType()
-          .GetMethods()
+          .GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
           .Where(HasInjectMethods)
           .ToList();
 

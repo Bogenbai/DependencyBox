@@ -8,7 +8,7 @@ namespace CodeBase.Tests.TestingTools.Stubs
     private IStub _stub;
 
     [Inject]
-    public void SetDependencies(IStub stub)
+    private void SetDependencies(IStub stub)
     {
       _stub = stub;
     }
